@@ -1,0 +1,8 @@
+clear;clc;close all
+f = [];
+for a = 2 : 100
+    for b = 2 : 100
+        c = repemel(factor(a),b);
+    end
+end
+
