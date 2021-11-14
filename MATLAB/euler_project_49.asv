@@ -1,0 +1,16 @@
+clear;clc;close all
+a = setdiff(primes(1e4),primes(1e3));
+m = [];
+for i = a
+    i= 1487
+    n = int2str(i)-'0';
+    b = intersect(perms(n)*10.^(0:3)',primes(1e4));
+    c = b+b';
+    d = 2*b;
+    e = ismember(c,d) - diag(ones(1,length(b)));
+    [f,g] = find(e);
+    if ~isempty(f)
+        m = [m;sort([b(f(1)),b(g(1)),(b(f(1))+b(g(1)))/2])];
+    end
+
+end
